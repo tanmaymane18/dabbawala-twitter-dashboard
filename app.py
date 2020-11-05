@@ -70,7 +70,7 @@ def make_map(arr):
 df = pd.read_csv('dabbawala.csv')
 #df_mum = pd.read_csv('.\BDE Dabbawala\dabbawala_mumbai.csv')
 df['date'] = pd.to_datetime(df['date'])
-df_mum['date'] = pd.to_datetime(df_mum['date'])
+#df_mum['date'] = pd.to_datetime(df_mum['date'])
 
 
 since = pd.to_datetime(st.sidebar.date_input('since: '))
