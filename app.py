@@ -1,5 +1,5 @@
 import pandas as pd
-import nltk
+#import nltk
 from wordcloud import WordCloud, STOPWORDS
 import re
 import emoji
