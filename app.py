@@ -80,8 +80,12 @@ working_data = df.loc[mask]
 
 df_date = working_data.groupby('date')['date'].size().to_frame()
 df_date.columns = ['counts']
-fig = px.line(df_date, x=df_date.index, y=df_date['counts'], title='Tweet counts')
+st.header('Tweets per Day')
+fig = px.line(df_date, x=df_date.index, y=df_date['counts'])
 st.plotly_chart(fig)
+st.header('Word Cloud')
 make_wordcloud(working_data['tweet'])
+st.header('Sentiment Analysis of Tweets')
 plot_sentiment(working_data['tweet'])
+st.header('Locations of Tweets')
 make_map(working_data[working_data['place'].notna()]['place'].unique())
